@@ -1,3 +1,25 @@
-# Godot 4+ specific ignores
+# Godot generated files
+.import/
+.export/
+*.translation
+
+# Mono / C# (if unused)
+.mono/
+data_*/
+*.csproj
+*.sln
+
+# Godot cache
+godot/.godot/
 .godot/
-/android/
+
+# Ignore assets (IMPORTANT)
+assets/tinyswords/
+**/assets/
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
