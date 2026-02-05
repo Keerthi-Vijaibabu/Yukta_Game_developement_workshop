@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://l6ppiyp0h347"]
+
+[ext_resource type="Script" uid="uid://wynf5n1msvut" path="res://attacker.gd" id="1_5yda7"]
+[ext_resource type="Texture2D" uid="uid://bkewjjnlvq31u" path="res://Assets/enemies/Orc-Idle.png" id="1_f5d0e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yda7"]
+atlas = ExtResource("1_f5d0e")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0ld0"]
+atlas = ExtResource("1_f5d0e")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_excs4"]
+atlas = ExtResource("1_f5d0e")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qfmr"]
+atlas = ExtResource("1_f5d0e")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff8l5"]
+atlas = ExtResource("1_f5d0e")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdew7"]
+atlas = ExtResource("1_f5d0e")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8lb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yda7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0ld0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_excs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qfmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff8l5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdew7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5d0e"]
+radius = 14.0
+height = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5yda7"]
+radius = 162.003
+
+[node name="Attacker" type="CharacterBody2D"]
+script = ExtResource("1_5yda7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3.8147e-06, -1)
+scale = Vector2(3.385, 3.12)
+sprite_frames = SubResource("SpriteFrames_c8lb5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f5d0e")
+
+[node name="range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+shape = SubResource("CircleShape2D_5yda7")

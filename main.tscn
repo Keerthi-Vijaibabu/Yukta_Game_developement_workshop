@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dixbje1fvvber"]
+[gd_scene load_steps=4 format=3 uid="uid://dixbje1fvvber"]
 
 [ext_resource type="PackedScene" uid="uid://d02goauah5lqs" path="res://MainPlayer.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://l6ppiyp0h347" path="res://attacker.tscn" id="2_0xm2m"]
 
 [sub_resource type="GDScript" id="GDScript_7dm0k"]
 script/source = "extends Node2D
@@ -9,7 +10,9 @@ script/source = "extends Node2D
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_7dm0k")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_ig7tw")]
+[node name="MainPlayer" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(508, 280)
 
-[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D2" type="Camera2D" parent="MainPlayer"]
+
+[node name="Attacker" parent="." instance=ExtResource("2_0xm2m")]
