@@ -16,3 +16,4 @@ position = Vector2(508, 280)
 [node name="Camera2D2" type="Camera2D" parent="MainPlayer"]
 
 [node name="Attacker" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(185, 154)

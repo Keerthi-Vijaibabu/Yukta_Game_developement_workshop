@@ -5,7 +5,13 @@ extends CharacterBody2D
 @export var speed = 300
 var character_direction : Vector2 = Vector2.ZERO
 
+
+var hp := 100
+
 	
+func _ready() -> void:
+	$AnimatedSprite2D.play("Idle")
+
 func _physics_process(delta):
 	character_direction.x = Input.get_axis("ui_left", "ui_right")
 	character_direction.y = Input.get_axis("ui_up", "ui_down")
@@ -27,3 +33,14 @@ func _physics_process(delta):
 		
 		
 	move_and_slide()
+
+
+func take_damage(amount: int) -> void:
+	hp -= amount
+	print("Player HP:", hp)
+	if hp <= 0:
+		die()
+
+func die() -> void:
+	print("player dead")
+	queue_free()
