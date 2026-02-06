@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://l6ppiyp0h347"]
+[gd_scene load_steps=48 format=3 uid="uid://l6ppiyp0h347"]
 
 [ext_resource type="Script" uid="uid://wynf5n1msvut" path="res://attacker.gd" id="1_5yda7"]
 [ext_resource type="Texture2D" uid="uid://bkewjjnlvq31u" path="res://Assets/enemies/Orc-Idle.png" id="1_f5d0e"]
@@ -285,6 +285,27 @@ animations = [{
 radius = 42.0
 height = 84.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdew7"]
+bg_color = Color(0.0786, 0.0483368, 0.0380669, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8lb5"]
+bg_color = Color(0.455217, 0.113949, 0.133919, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.669931, 0.260563, 0.221779, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Attacker" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_5yda7")
 
@@ -318,6 +339,8 @@ offset_left = -17.0
 offset_top = -40.0
 offset_right = 23.0
 offset_bottom = -30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bdew7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c8lb5")
 max_value = 40.0
 value = 40.0
 show_percentage = false

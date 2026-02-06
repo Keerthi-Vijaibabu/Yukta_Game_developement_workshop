@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var target: CharacterBody2D = $"../MainPlayer"
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_cd: Timer = $attackCoolDown
+@onready var health_bar: ProgressBar = $healthBar
 
 var speed := 110
 var chasing := false
@@ -69,7 +70,8 @@ func _on_attack_area_body_exited(body: Node2D) -> void:
 
 func take_damage(amount: int) -> void:
 	$AnimatedSprite2D.play("hurt")
-	hp -= amount
+	hp = max(hp - amount, 0)
+	health_bar.value = hp
 	print("Enemy HP:", hp)
 
 	if hp <= 0:

@@ -57,9 +57,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func take_damage(amount: int) -> void:
-	
-	
+func take_damage(amount: int) -> void:	
 	hp = max(hp - amount, 0)
 	hp_bar.value = hp
 
