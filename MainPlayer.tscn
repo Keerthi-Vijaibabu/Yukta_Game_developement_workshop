@@ -1,7 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://d02goauah5lqs"]
+[gd_scene load_steps=35 format=3 uid="uid://d02goauah5lqs"]
 
 [ext_resource type="Texture2D" uid="uid://c122cv8o6xmm7" path="res://Assets/character/Warrior_Idle.png" id="1_0eec5"]
-[ext_resource type="Script" uid="uid://tdrnnor10yie" path="res://main_player.gd" id="1_y6rpq"]
+[ext_resource type="Script" path="res://main_player.gd" id="1_y6rpq"]
 [ext_resource type="Texture2D" uid="uid://cdghtgeobu0jk" path="res://Assets/character/Warrior_Run.png" id="3_xj6ya"]
 [ext_resource type="Texture2D" uid="uid://bc4t4x24x83ly" path="res://Assets/character/Warrior_Attack1.png" id="4_muwlb"]
 [ext_resource type="Texture2D" uid="uid://foqaxp64gw5g" path="res://Assets/character/Warrior_Attack2.png" id="5_120qq"]
@@ -189,7 +189,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ul0lr")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -215,14 +215,30 @@ animations = [{
 radius = 19.0
 height = 72.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mwggl"]
+radius = 19.0
+height = 70.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_y6rpq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_c3nvr")
-animation = &"Idle"
+animation = &"attack"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xj6ya")
+
+[node name="AttackHitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitBox"]
+position = Vector2(27, 0)
+shape = SubResource("CapsuleShape2D_mwggl")
+
+[node name="attackCoolDown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_body_entered"]

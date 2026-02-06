@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=3 uid="uid://l6ppiyp0h347"]
 
-[ext_resource type="Script" uid="uid://wynf5n1msvut" path="res://attacker.gd" id="1_5yda7"]
+[ext_resource type="Script" path="res://attacker.gd" id="1_5yda7"]
 [ext_resource type="Texture2D" uid="uid://bkewjjnlvq31u" path="res://Assets/enemies/Orc-Idle.png" id="1_f5d0e"]
 [ext_resource type="Texture2D" uid="uid://bn71gilrwwcki" path="res://Assets/enemies/Orc-Attack01.png" id="2_7qfmr"]
 [ext_resource type="Texture2D" uid="uid://dqni20kg842t6" path="res://Assets/enemies/Orc-Attack02.png" id="3_ff8l5"]
@@ -222,7 +222,6 @@ script = ExtResource("1_5yda7")
 
 [node name="range" type="Area2D" parent="."]
 position = Vector2(2.27374e-13, 0)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
 shape = SubResource("CircleShape2D_5yda7")
@@ -244,7 +243,8 @@ frame_progress = 0.755372
 position = Vector2(16, 2)
 shape = SubResource("CapsuleShape2D_j0ld0")
 
-[node name="attackCoolDown Timer" type="Timer" parent="."]
+[node name="attackCoolDown" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
