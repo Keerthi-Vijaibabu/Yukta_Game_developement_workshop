@@ -12,9 +12,14 @@ var damage := 5
 var hp := 50
 var dead = false
 var attacking = false
+var being_attacked = false
+
+@export var coin_reward: int = 3
 
 func _physics_process(delta: float) -> void:
 	if dead:
+		return
+	if being_attacked == true:
 		return
 	
 	if not chasing:
@@ -83,8 +88,10 @@ func die() -> void:
 	in_attack_range = false
 	attacking = false
 	velocity = Vector2.ZERO
-
+	
 	sprite.play("die")
+	ScoreManager.add_coins(coin_reward)
+
 	await $AnimatedSprite2D.animation_finished
 	await get_tree().create_timer(1.5).timeout
 	queue_free()

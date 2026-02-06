@@ -308,6 +308,7 @@ corner_radius_bottom_left = 8
 
 [node name="Attacker" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_5yda7")
+coin_reward = null
 
 [node name="range" type="Area2D" parent="."]
 position = Vector2(2.27374e-13, 0)
