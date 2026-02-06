@@ -4,8 +4,9 @@ extends CharacterBody2D
 
 @export var speed = 300
 var character_direction : Vector2 = Vector2.ZERO
+@onready var player_hp_bar: ProgressBar = $PlayerHpBar
 
-
+@export var max_hp = 100
 var hp := 100
 
 
@@ -13,12 +14,21 @@ var hp := 100
 @onready var attack_cool_down = $attackCoolDown
 var damage = 15
 var attacking = false
-	
+
+#player hp bar
+@onready var hp_bar: ProgressBar = $PlayerHpBar
+@onready var heal = $heal
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 	attack_hit_box.disabled = true
 
 func _physics_process(delta):
+	
+	if heal.is_stopped() && hp < 100: #To increase health
+		hp+=1
+		heal.start()
+		hp_bar.value = hp
 	
 	if Input.is_action_just_pressed("attack"):
 		start_attack()
@@ -35,7 +45,7 @@ func _physics_process(delta):
 		if character_direction:
 			velocity = character_direction * speed
 			if $AnimatedSprite2D.animation != "Walking":
-				$AnimatedSprite2D.animation = "Walking"
+				$AnimatedSprite2D.play("Walking")
 		
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, speed)
@@ -48,8 +58,11 @@ func _physics_process(delta):
 
 
 func take_damage(amount: int) -> void:
-	hp -= amount
-	print("Player HP:", hp)
+	
+	
+	hp = max(hp - amount, 0)
+	hp_bar.value = hp
+
 	if hp <= 0:
 		die()
 

@@ -1,10 +1,12 @@
-[gd_scene load_steps=36 format=3 uid="uid://l6ppiyp0h347"]
+[gd_scene load_steps=46 format=3 uid="uid://l6ppiyp0h347"]
 
-[ext_resource type="Script" path="res://attacker.gd" id="1_5yda7"]
+[ext_resource type="Script" uid="uid://wynf5n1msvut" path="res://attacker.gd" id="1_5yda7"]
 [ext_resource type="Texture2D" uid="uid://bkewjjnlvq31u" path="res://Assets/enemies/Orc-Idle.png" id="1_f5d0e"]
 [ext_resource type="Texture2D" uid="uid://bn71gilrwwcki" path="res://Assets/enemies/Orc-Attack01.png" id="2_7qfmr"]
 [ext_resource type="Texture2D" uid="uid://dqni20kg842t6" path="res://Assets/enemies/Orc-Attack02.png" id="3_ff8l5"]
 [ext_resource type="Texture2D" uid="uid://bh7i18das1ke4" path="res://Assets/enemies/Orc-Walk.png" id="3_j0ld0"]
+[ext_resource type="Texture2D" uid="uid://j41l284am7k0" path="res://Assets/enemies/Orc-Death.png" id="4_bdew7"]
+[ext_resource type="Texture2D" uid="uid://dhyq5vdrqygf1" path="res://Assets/enemies/Orc-Hurt.png" id="4_ff8l5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5yda7"]
 radius = 162.003
@@ -60,6 +62,38 @@ region = Rect2(400, 0, 100, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_awmqk"]
 atlas = ExtResource("3_ff8l5")
 region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e65rm"]
+atlas = ExtResource("4_bdew7")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6622"]
+atlas = ExtResource("4_bdew7")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u5ob"]
+atlas = ExtResource("4_bdew7")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uylq6"]
+atlas = ExtResource("4_bdew7")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf45b"]
+atlas = ExtResource("4_ff8l5")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cifmo"]
+atlas = ExtResource("4_ff8l5")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbb52"]
+atlas = ExtResource("4_ff8l5")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s11ti"]
+atlas = ExtResource("4_ff8l5")
+region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yda7"]
 atlas = ExtResource("1_f5d0e")
@@ -162,6 +196,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_e65rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6622")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0u5ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uylq6")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf45b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cifmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbb52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s11ti")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5yda7")
 }, {
 "duration": 1.0,
@@ -217,7 +285,7 @@ animations = [{
 radius = 42.0
 height = 84.0
 
-[node name="Attacker" type="CharacterBody2D"]
+[node name="Attacker" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_5yda7")
 
 [node name="range" type="Area2D" parent="."]
@@ -234,8 +302,7 @@ texture_filter = 1
 position = Vector2(7.62939e-06, 1)
 scale = Vector2(4.1325, 3.86)
 sprite_frames = SubResource("SpriteFrames_c8lb5")
-animation = &"attack"
-frame_progress = 0.755372
+animation = &"die"
 
 [node name="attack_area" type="Area2D" parent="."]
 
@@ -245,6 +312,15 @@ shape = SubResource("CapsuleShape2D_j0ld0")
 
 [node name="attackCoolDown" type="Timer" parent="."]
 one_shot = true
+
+[node name="healthBar" type="ProgressBar" parent="."]
+offset_left = -17.0
+offset_top = -40.0
+offset_right = 23.0
+offset_bottom = -30.0
+max_value = 40.0
+value = 40.0
+show_percentage = false
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]

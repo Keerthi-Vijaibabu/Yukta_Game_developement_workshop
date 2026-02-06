@@ -1,7 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://d02goauah5lqs"]
+[gd_scene load_steps=36 format=3 uid="uid://d02goauah5lqs"]
 
 [ext_resource type="Texture2D" uid="uid://c122cv8o6xmm7" path="res://Assets/character/Warrior_Idle.png" id="1_0eec5"]
-[ext_resource type="Script" path="res://main_player.gd" id="1_y6rpq"]
+[ext_resource type="Script" uid="uid://tdrnnor10yie" path="res://main_player.gd" id="1_y6rpq"]
 [ext_resource type="Texture2D" uid="uid://cdghtgeobu0jk" path="res://Assets/character/Warrior_Run.png" id="3_xj6ya"]
 [ext_resource type="Texture2D" uid="uid://bc4t4x24x83ly" path="res://Assets/character/Warrior_Attack1.png" id="4_muwlb"]
 [ext_resource type="Texture2D" uid="uid://foqaxp64gw5g" path="res://Assets/character/Warrior_Attack2.png" id="5_120qq"]
@@ -216,8 +216,11 @@ radius = 19.0
 height = 72.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mwggl"]
-radius = 19.0
-height = 70.0
+radius = 36.0
+height = 72.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muwlb"]
+radius = 34.2345
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_y6rpq")
@@ -234,10 +237,36 @@ shape = SubResource("CapsuleShape2D_xj6ya")
 [node name="AttackHitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitBox"]
-position = Vector2(27, 0)
+position = Vector2(30, 26)
 shape = SubResource("CapsuleShape2D_mwggl")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackHitBox"]
+position = Vector2(35, -15)
+shape = SubResource("CircleShape2D_muwlb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="AttackHitBox"]
+position = Vector2(19, -46)
+shape = SubResource("CircleShape2D_muwlb")
+
 [node name="attackCoolDown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="PlayerHpBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = -77.0
+offset_right = 25.0
+offset_bottom = -50.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+value = 100.0
+rounded = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heal" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
