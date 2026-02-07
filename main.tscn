@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dixbje1fvvber"]
+[gd_scene load_steps=7 format=3 uid="uid://dixbje1fvvber"]
 
 [ext_resource type="PackedScene" uid="uid://d02goauah5lqs" path="res://MainPlayer.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://l6ppiyp0h347" path="res://attacker.tscn" id="2_0xm2m"]
+[ext_resource type="FontFile" uid="uid://buds60cdisdds" path="res://Assets/Fonts/GridHunter-gw8D5.otf" id="3_7mycd"]
+[ext_resource type="Script" uid="uid://ba5agh13rj7f8" path="res://coin_label.gd" id="3_h2yge"]
 
 [sub_resource type="GDScript" id="GDScript_7dm0k"]
 script/source = "extends Node2D
 "
+
+[sub_resource type="LabelSettings" id="LabelSettings_272bh"]
+font = ExtResource("3_7mycd")
+font_size = 45
+font_color = Color(0.8047, 0.678445, 0.319614, 1)
 
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_7dm0k")
@@ -15,5 +22,20 @@ position = Vector2(508, 280)
 
 [node name="Camera2D2" type="Camera2D" parent="MainPlayer"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="MainPlayer/Camera2D2"]
+
+[node name="coin_label" type="Label" parent="MainPlayer/Camera2D2/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+label_settings = SubResource("LabelSettings_272bh")
+uppercase = true
+script = ExtResource("3_h2yge")
+
 [node name="Attacker" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(185, 154)
+coin_reward = 3
+
+[node name="Attacker2" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(952, 469)
+coin_reward = 3
