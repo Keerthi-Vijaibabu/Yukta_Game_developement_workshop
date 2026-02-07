@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dixbje1fvvber"]
+[gd_scene load_steps=7 format=3 uid="uid://dixbje1fvvber"]
 
 [ext_resource type="PackedScene" uid="uid://d02goauah5lqs" path="res://MainPlayer.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://l6ppiyp0h347" path="res://attacker.tscn" id="2_0xm2m"]
-[ext_resource type="FontFile" path="a" id="2_lquwl"]
 [ext_resource type="FontFile" uid="uid://buds60cdisdds" path="res://Assets/Fonts/GridHunter-gw8D5.otf" id="3_7mycd"]
 [ext_resource type="Script" uid="uid://ba5agh13rj7f8" path="res://coin_label.gd" id="3_h2yge"]
 
@@ -28,7 +27,6 @@ position = Vector2(508, 280)
 [node name="coin_label" type="Label" parent="MainPlayer/Camera2D2/CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("2_lquwl")
 theme_override_font_sizes/font_size = 30
 label_settings = SubResource("LabelSettings_272bh")
 uppercase = true

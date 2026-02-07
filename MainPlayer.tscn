@@ -215,9 +215,8 @@ animations = [{
 radius = 19.0
 height = 72.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mwggl"]
-radius = 36.0
-height = 72.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muwlb"]
+size = Vector2(102, 48)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muwlb"]
 bg_color = Color(0.117647, 0.0117647, 0.109804, 1)
@@ -248,8 +247,8 @@ shape = SubResource("CapsuleShape2D_xj6ya")
 [node name="AttackHitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitBox"]
-position = Vector2(30, 26)
-shape = SubResource("CapsuleShape2D_mwggl")
+position = Vector2(-3, 1)
+shape = SubResource("RectangleShape2D_muwlb")
 
 [node name="attackCoolDown" type="Timer" parent="."]
 wait_time = 0.5
