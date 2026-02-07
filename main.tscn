@@ -34,6 +34,8 @@ script = ExtResource("3_h2yge")
 
 [node name="Attacker" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(185, 154)
+coin_reward = 3
 
 [node name="Attacker2" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(952, 469)
+coin_reward = 3

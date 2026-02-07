@@ -1,10 +1,12 @@
-[gd_scene load_steps=37 format=3 uid="uid://d02goauah5lqs"]
+[gd_scene load_steps=39 format=3 uid="uid://d02goauah5lqs"]
 
 [ext_resource type="Texture2D" uid="uid://c122cv8o6xmm7" path="res://Assets/character/Warrior_Idle.png" id="1_0eec5"]
 [ext_resource type="Script" uid="uid://tdrnnor10yie" path="res://main_player.gd" id="1_y6rpq"]
 [ext_resource type="Texture2D" uid="uid://cdghtgeobu0jk" path="res://Assets/character/Warrior_Run.png" id="3_xj6ya"]
 [ext_resource type="Texture2D" uid="uid://bc4t4x24x83ly" path="res://Assets/character/Warrior_Attack1.png" id="4_muwlb"]
 [ext_resource type="Texture2D" uid="uid://foqaxp64gw5g" path="res://Assets/character/Warrior_Attack2.png" id="5_120qq"]
+[ext_resource type="AudioStream" uid="uid://bwi3vpghe6fr5" path="res://Assets/Music/attack.mp3" id="6_120qq"]
+[ext_resource type="AudioStream" uid="uid://truasxt6y7jo" path="res://Assets/Music/hurt.mp3" id="7_ps4r8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6rpq"]
 atlas = ExtResource("1_0eec5")
@@ -273,5 +275,11 @@ metadata/_edit_use_anchors_ = true
 [node name="heal" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_120qq")
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ps4r8")
 
 [connection signal="body_entered" from="AttackHitBox" to="." method="_on_attack_hit_box_body_entered"]

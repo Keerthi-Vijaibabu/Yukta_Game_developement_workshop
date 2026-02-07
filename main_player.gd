@@ -60,6 +60,7 @@ func _physics_process(delta):
 func take_damage(amount: int) -> void:	
 	hp = max(hp - amount, 0)
 	hp_bar.value = hp
+	$hurt.play()
 
 	if hp <= 0:
 		die()
@@ -81,7 +82,9 @@ func start_attack() -> void:
 	
 	print("got attack signal")
 	$AnimatedSprite2D.play("attack")
-
+	$Attack.play()
+	await get_tree().create_timer(0.8).timeout
+	$Attack.play()
 	# Enable hitbox briefly (hit window)
 	attack_hit_box.disabled = false
 	await get_tree().create_timer(0.12).timeout  # hit active time
