@@ -14,7 +14,7 @@ godot/.godot/
 .godot/
 
 # Ignore assets (IMPORTANT)
-assets/Tinyswords/
+
 
 # OS / Editor junk
 .DS_Store
