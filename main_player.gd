@@ -65,9 +65,6 @@ func take_damage(amount: int) -> void:
 	if hp <= 0:
 		die()
 
-func die() -> void:
-	print("player dead")
-	queue_free()
 
 
 func start_attack() -> void:
@@ -99,3 +96,7 @@ func _on_attack_hit_box_body_entered(body):
 	if body.is_in_group("enemies"):
 		if body.has_method("take_damage"):
 			body.take_damage(damage)
+
+func die():
+	print("Enemy dead!")
+	queue_free()
