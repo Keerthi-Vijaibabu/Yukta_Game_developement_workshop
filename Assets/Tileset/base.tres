@@ -164,7 +164,8 @@ texture_region_size = Vector2i(192, 192)
 0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 64)
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 16, 0, 32, 0, 32, 32, 32, 32, 16)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -15, -5, 0, 7.5, -13)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(7, -3.5, 5.5, -12.5, -5, -1.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxosv"]
 texture = ExtResource("7_dxosv")
@@ -507,8 +508,9 @@ texture_region_size = Vector2i(64, 64)
 8:2/0 = 0
 8:2/0/terrain_set = 0
 8:2/0/terrain = 1
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 16, 16.3697, 16, 32, 16, 32, 32, -32, 32)
-8:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, -32, 32, -32, 32, 16, 16, 16)
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -16, -32, -16, 16, -16, 32, -32, 32)
+8:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 16, 32, 16, 32, 32, -16, 32)
+8:2/0/physics_layer_0/polygon_2/points = PackedVector2Array(16, -32, 32, -32, 32, 16, 16, 16)
 8:2/0/terrains_peering_bit/top_side = 1
 8:3/0 = 0
 8:3/0/terrain_set = 0
