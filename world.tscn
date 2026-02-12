@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://b5gpq0rys4uy7"]
+[gd_scene load_steps=5 format=4 uid="uid://b5gpq0rys4uy7"]
 
 [ext_resource type="TileSet" uid="uid://dxe1bl53psj4a" path="res://Assets/Tileset/base.tres" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://d02goauah5lqs" path="res://MainPlayer.tscn" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://l6ppiyp0h347" path="res://attacker.tscn" id="3_tlwt5"]
+[ext_resource type="AudioStream" uid="uid://c1rtrt1nlyjqu" path="res://Assets/Music/Bg.mp3" id="4_aqk2v"]
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -40,6 +41,10 @@ tile_set = ExtResource("1_f3sb7")
 position = Vector2(739, 524)
 
 [node name="Camera2D" type="Camera2D" parent="MainPlayer"]
+limit_left = 0
+limit_top = 0
+limit_right = 2000
+limit_bottom = 1200
 
 [node name="Attacker" parent="." instance=ExtResource("3_tlwt5")]
 position = Vector2(399, 402)
@@ -61,3 +66,8 @@ position = Vector2(1352, 610)
 
 [node name="Attacker7" parent="." instance=ExtResource("3_tlwt5")]
 position = Vector2(213, 112)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_aqk2v")
+volume_db = -16.0
+autoplay = true

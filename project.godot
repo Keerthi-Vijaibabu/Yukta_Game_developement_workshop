@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Workshop"
-run/main_scene="res://main.tscn"
+run/main_scene="uid://b5gpq0rys4uy7"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -23,7 +23,11 @@ ScoreManager="*res://SceneManager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=2
 
 [input]
 
