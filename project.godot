@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Workshop"
-run/main_scene="res://main.tscn"
+run/main_scene="uid://cyscpana4116a"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,8 +21,7 @@ ScoreManager="*res://SceneManager.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/mode=4
 window/stretch/scale_mode="integer"
 
 [input]

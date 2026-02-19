@@ -6,6 +6,7 @@
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(0, -1)
 metadata/_edit_vertical_guides_ = [-1517.0]
 
 [node name="Water" type="TileMapLayer" parent="."]

@@ -1,0 +1,140 @@
+[gd_scene load_steps=27 format=3 uid="uid://ckpr3w1h15hgl"]
+
+[ext_resource type="Texture2D" uid="uid://b6lxkbfx77t74" path="res://Assets/download.png" id="1_7eg23"]
+[ext_resource type="Texture2D" uid="uid://b78alk7nmljfy" path="res://Assets/game over/ezgif-frame-001.png" id="1_jhou3"]
+[ext_resource type="Texture2D" uid="uid://cy2j3cudsosl0" path="res://Assets/game over/ezgif-frame-002.png" id="2_3xhsb"]
+[ext_resource type="Texture2D" uid="uid://djvbaemtkg86x" path="res://Assets/game over/ezgif-frame-003.png" id="3_7eg23"]
+[ext_resource type="Texture2D" uid="uid://cjr1lk5nsxoib" path="res://Assets/game over/ezgif-frame-004.png" id="4_0o5rp"]
+[ext_resource type="Texture2D" uid="uid://duph3jcsm20ks" path="res://Assets/game over/ezgif-frame-005.png" id="5_didoo"]
+[ext_resource type="Texture2D" uid="uid://c0dpk4yqqsend" path="res://Assets/game over/ezgif-frame-006.png" id="6_psfuu"]
+[ext_resource type="Texture2D" uid="uid://dmufiyh87qf0x" path="res://Assets/game over/ezgif-frame-007.png" id="7_pi44w"]
+[ext_resource type="Texture2D" uid="uid://cir7uretpf85x" path="res://Assets/game over/ezgif-frame-008.png" id="8_x5j47"]
+[ext_resource type="Texture2D" uid="uid://c8dqf78oy6dxo" path="res://Assets/game over/ezgif-frame-009.png" id="9_lek4k"]
+[ext_resource type="Texture2D" uid="uid://bi75jrb8mn3al" path="res://Assets/game over/ezgif-frame-010.png" id="10_28kla"]
+[ext_resource type="Texture2D" uid="uid://8su68o7gwlbd" path="res://Assets/game over/ezgif-frame-011.png" id="11_vqq83"]
+[ext_resource type="Texture2D" uid="uid://nuhogwwv1eck" path="res://Assets/game over/ezgif-frame-012.png" id="12_hto0y"]
+[ext_resource type="Texture2D" uid="uid://bhsbaegkui03m" path="res://Assets/game over/ezgif-frame-013.png" id="13_knfem"]
+[ext_resource type="Texture2D" uid="uid://c03jwjpgmra5o" path="res://Assets/game over/ezgif-frame-014.png" id="14_47g5g"]
+[ext_resource type="Texture2D" uid="uid://b38bbe0jpyssr" path="res://Assets/game over/ezgif-frame-015.png" id="15_3hfur"]
+[ext_resource type="Texture2D" uid="uid://bab0krqdltt83" path="res://Assets/game over/ezgif-frame-016.png" id="16_te55c"]
+[ext_resource type="Texture2D" uid="uid://bt5wi1rq2kl8p" path="res://Assets/game over/ezgif-frame-017.png" id="17_w5dc7"]
+[ext_resource type="Texture2D" uid="uid://dbcjgu47vmyon" path="res://Assets/game over/ezgif-frame-018.png" id="18_38l8k"]
+[ext_resource type="Texture2D" uid="uid://bxec7hm68fmvg" path="res://Assets/game over/ezgif-frame-019.png" id="19_5bvnw"]
+[ext_resource type="Texture2D" uid="uid://cl82nhehb7x8n" path="res://Assets/game over/ezgif-frame-020.png" id="20_iyovn"]
+[ext_resource type="Texture2D" uid="uid://dwi2ufflihp1" path="res://Assets/game over/ezgif-frame-021.png" id="21_5bp4i"]
+[ext_resource type="FontFile" uid="uid://buds60cdisdds" path="res://Assets/Fonts/GridHunter-gw8D5.otf" id="22_3xhsb"]
+[ext_resource type="Script" uid="uid://bo0nrbq16r7cx" path="res://start.gd" id="24_0o5rp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag8sd"]
+atlas = ExtResource("1_jhou3")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r4get"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag8sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3xhsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7eg23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0o5rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_didoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_psfuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pi44w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x5j47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lek4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_28kla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vqq83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hto0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_knfem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_47g5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3hfur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_te55c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w5dc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_38l8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5bvnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_iyovn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5bp4i")
+}],
+"loop": true,
+"name": &"game_over",
+"speed": 9.0
+}]
+
+[node name="game_over" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 3037.0
+offset_bottom = 1685.0
+texture = ExtResource("1_7eg23")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(926, 629)
+scale = Vector2(2.35313, 1.97109)
+sprite_frames = SubResource("SpriteFrames_r4get")
+animation = &"game_over"
+autoplay = "game_over"
+frame_progress = 0.378964
+
+[node name="game_over_exit" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -721.5
+offset_top = -135.5
+offset_right = -441.5
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.754562, 0.776593, 0.774253, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.873298, 0.873298, 0.873298, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_3xhsb")
+theme_override_font_sizes/font_size = 64
+text = "Go Back"
+script = ExtResource("24_0o5rp")
+
+[connection signal="pressed" from="TextureRect/game_over_exit" to="TextureRect/game_over_exit" method="_on_pressed_game_over"]

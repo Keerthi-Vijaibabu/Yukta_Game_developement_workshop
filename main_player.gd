@@ -98,5 +98,5 @@ func _on_attack_hit_box_body_entered(body):
 			body.take_damage(damage)
 
 func die():
-	print("Enemy dead!")
+	get_tree().change_scene_to_file("res://game_over.tscn")
 	queue_free()
